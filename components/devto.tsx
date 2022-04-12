@@ -52,6 +52,20 @@ const DevTo: NextPage = ({ posts }) => {
           <div>
             <div className='flex space-x-1 text-sm text-gray-500'>
               <time dateTime={post.readable_publish_date}>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  className='h-4 w-4 inline-block relative -top-0.5 mr-1'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  stroke='currentColor'
+                  stroke-width='2'
+                >
+                  <path
+                    stroke-linecap='round'
+                    stroke-linejoin='round'
+                    d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z'
+                  />
+                </svg>
                 {post.readable_publish_date}
               </time>
               <span aria-hidden='true' className='text-gray-900'>

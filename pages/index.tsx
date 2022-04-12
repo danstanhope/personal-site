@@ -5,6 +5,7 @@ import About from '../components/about'
 import DevTo from '../components/devto'
 import Github from '../components/github'
 import Footer from '../components/footer'
+import Header from '../components/header'
 import { getPosts } from '../lib/request'
 
 const Home: NextPage = ({ posts }) => {
@@ -16,7 +17,8 @@ const Home: NextPage = ({ posts }) => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <main className='text-lg max-w-3xl mx-auto my-20 bg-white'>
+      <main className='text-lg max-w-3xl mx-auto bg-white'>
+        <Header />
         <About />
 
         <div className='bg-white pt-16'>
