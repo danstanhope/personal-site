@@ -2,7 +2,8 @@ import { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import About from '../components/about'
-import List from '../components/list'
+import DevTo from '../components/devto'
+import Github from '../components/github'
 import Footer from '../components/footer'
 import { getPosts } from '../lib/request'
 
@@ -18,7 +19,7 @@ const Home: NextPage = ({ posts }) => {
       <main className='text-lg max-w-3xl mx-auto my-20 bg-white'>
         <About />
 
-        <div className='bg-white pt-16 pb-20 lg:pb-28'>
+        <div className='bg-white pt-16'>
           <div className='divide-y-2 divide-gray-200'>
             <div>
               <h2 className='text-3xl tracking-tight font-extrabold text-gray-900'>
@@ -29,7 +30,11 @@ const Home: NextPage = ({ posts }) => {
                   Here's some posts I've written in the past. Hope you like
                   them!
                 </span>
-                <a href='https://dev.to/danstanhope' target="_blank" className='text-pink-500 ml-auto text-sm underline hover:text-pink-700'>
+                <a
+                  href='https://dev.to/danstanhope'
+                  target='_blank'
+                  className='text-pink-500 ml-auto text-sm underline hover:text-pink-700'
+                >
                   See All
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
@@ -49,22 +54,47 @@ const Home: NextPage = ({ posts }) => {
               </p>
             </div>
             <div className='mt-6'>
-              <List posts={posts} />
+              <DevTo posts={posts} />
             </div>
           </div>
         </div>
 
-        <div className='bg-white pt-16 pb-20 px-4 sm:px-6 lg:pb-28 lg:px-8'>
+        <div className='bg-white pt-12 pb-4'>
           <div className=' max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl'>
             <div>
               <h2 className='text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl'>
                 Featured Repos
               </h2>
-              <p className='mt-3 text-xl text-gray-500 sm:mt-4'>
-                Here's some of the code I've written as part of my tutorials.
+              <p className='mt-2 text-lg text-gray-500 sm:mt-2 flex justify-center items-center'>
+                <span>
+                  Here's some of the code I've written as part of my tutorials.
+                </span>
+                <a
+                  href='https://github.com/danstanhope'
+                  target='_blank'
+                  className='text-pink-500 ml-auto text-sm underline hover:text-pink-700'
+                >
+                  See All
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    className='h-4 w-4 inline pl-1'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                    stroke='currentColor'
+                    stroke-width='2'
+                  >
+                    <path
+                      stroke-linecap='round'
+                      stroke-linejoin='round'
+                      d='M13 5l7 7-7 7M5 5l7 7-7 7'
+                    />
+                  </svg>
+                </a>
               </p>
             </div>
-            <div className='mt-12 grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12'></div>
+            <div className='mt-6'>
+              <Github />
+            </div>
           </div>
         </div>
       </main>
