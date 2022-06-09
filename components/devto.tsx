@@ -44,7 +44,7 @@ const DevTo: NextPage<Posts> = ({ posts }) => {
           alt=''
         />
       </div>
-      <div className='flex-1 p-2 flex flex-col justify-between'>
+      <div className='flex-1 p-2 p-2 px-0 sm:px-2 flex flex-col justify-between'>
         <div className='flex-1'>
           <a href={post.url} className='block mt-2'>
             <p className='text-xl font-semibold text-gray-900 line-clamp-2 hover:text-pink-700 dark:text-gray-100'>
