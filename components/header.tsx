@@ -1,32 +1,42 @@
 import { HeartIcon } from '@heroicons/react/solid'
 import { NextPage } from 'next'
 import Image from 'next/image'
-import { useEffect } from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Switch } from '@headlessui/react'
+import { useTheme } from 'next-themes'
 
 const Header: NextPage = () => {
+  const [enabled, setEnabled] = useState(false)
+  const {theme, setTheme } = useTheme('light')
+
+  const toggle = () => {
+    setEnabled(!enabled)
+    setTheme(enabled ? 'dark' : 'light')
+  }
+
   function classNames (...classes) {
     return classes.filter(Boolean).join(' ')
   }
 
-  const [enabled, setEnabled] = useState(false)
+  useEffect(() => {
+    setEnabled(theme === 'light' ? true : false)    
+  }, [theme]);
 
   return (
-    <header className='bg-white flex p-6 mb-4 mt-2' aria-labelledby='header-nav'>
+    <header className='flex px-0 sm:px-6 py-8' aria-labelledby='header-nav'>
       <Switch
         checked={enabled}
-        onChange={setEnabled}
+        onChange={toggle}
         className={classNames(
-          enabled ? 'bg-gray-600' : 'bg-gray-200',
-          'ml-auto relative inline-flex flex-shrink-0 h-8 w-16 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500'
+          enabled ? 'bg-gray-300' : 'bg-gray-200',
+          'ml-auto relative inline-flex flex-shrink-0 h-8 w-16 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300'
         )}
       >
         <span className='sr-only'>Use setting</span>
         <span
           className={classNames(
             enabled ? 'translate-x-8' : 'translate-x-0',
-            'pointer-events-none relative inline-block h-7 w-7 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200'
+            'pointer-events-none relative inline-block h-7 w-7 rounded-full bg-white dark:bg-gray-600 shadow transform ring-0 transition ease-in-out duration-200'
           )}
         >
           <span
@@ -40,7 +50,7 @@ const Header: NextPage = () => {
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              className='h-5 w-5 text-gray-400'
+              className='h-5 w-5 text-gray-100'
               fill='none'
               viewBox='0 0 24 24'
               stroke='currentColor'
@@ -64,7 +74,7 @@ const Header: NextPage = () => {
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              className='h-5 w-5 text-gray-600'
+              className='h-5 w-5 text-gray-700'
               fill='none'
               viewBox='0 0 24 24'
               stroke='currentColor'

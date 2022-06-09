@@ -14,12 +14,12 @@ const About: NextPage = () => {
         />
       </div>
       <div className='sm:col-span-2'>
-        <div>
+        <div className="text-center sm:text-left">
           <div className='text-lg leading-6 font-medium space-y-1'>
-            <h3 className='text-3xl font-extrabold tracking-tight sm:text-5xl'>
+            <h3 className='text-3xl font-extrabold tracking-tight sm:text-5xl dark:text-gray-100'>
               Dan Stanhope
             </h3>
-            <p className='text-gray-800'>
+            <p className='text-gray-800 dark:text-gray-300'>
               Head of Development |{' '}
               <a
                 className='text-pink-500 underline hover:text-pink-700'
@@ -29,12 +29,12 @@ const About: NextPage = () => {
               </a>
             </p>
           </div>
-          <ul role='list' className='flex space-x-2 mt-2'>
+          <ul role='list' className='flex space-x-2 mt-2 justify-center sm:justify-start'>
             <li>
               <a href='https://twitter.com/danstanhope' className='text-gray-400 hover:text-gray-500'>
                 <span className='sr-only'>Twitter</span>
                 <svg
-                  className='h-5 w-5 sm:h-5 sm:w-5 inline text-gray-500'
+                  className='h-5 w-5 sm:h-5 sm:w-5 inline text-gray-500 dark:text-gray-200'
                   fill='currentColor'
                   viewBox='0 0 24 24'
                   stroke='currentColor'
@@ -46,7 +46,7 @@ const About: NextPage = () => {
             <li>
               <a href='https://github.com/danstanhope' className='text-gray-400 hover:text-gray-500'>
                 <svg
-                  className='h-5 w-5 sm:h-5 sm:w-5 inline text-gray-500'
+                  className='h-5 w-5 sm:h-5 sm:w-5 inline text-gray-500 dark:text-gray-200'
                   fill='currentColor'
                   viewBox='0 0 24 24'
                   stroke='currentColor'
@@ -60,7 +60,7 @@ const About: NextPage = () => {
               <a href='https://www.linkedin.com/in/danstanhope/' className='text-gray-400 hover:text-gray-500'>
                 <span className='sr-only'>LinkedIn</span>
                 <svg
-                  className='h-5 w-5 sm:h-5 sm:w-5 inline text-gray-500'
+                  className='h-5 w-5 sm:h-5 sm:w-5 inline text-gray-500 dark:text-gray-200'
                   fill='currentColor'
                   viewBox='0 0 24 24'
                   stroke='currentColor'
@@ -71,7 +71,7 @@ const About: NextPage = () => {
             </li>
           </ul>
           <div className='text-base'>
-            <p className='text-gray-500 pt-6'>
+            <p className='text-gray-500 pt-6 dark:text-gray-400'>
               I've been working in software for 15+ years now and loving it.
               Most recently as head of development at ExpertFile.
             </p>

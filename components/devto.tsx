@@ -31,11 +31,11 @@ const DevTo: NextPage = ({ posts }) => {
       <div className='flex-1 p-2 flex flex-col justify-between'>
         <div className='flex-1'>
           <a href={post.url} className='block mt-2'>
-            <p className='text-xl font-semibold text-gray-900 line-clamp-2 hover:text-pink-700'>
+            <p className='text-xl font-semibold text-gray-900 line-clamp-2 hover:text-pink-700 dark:text-gray-100'>
               {post.title}
             </p>
           </a>
-          <p className='mt-3 text-base text-gray-500 line-clamp-3'>
+          <p className='mt-3 text-base text-gray-500 dark:text-gray-400 line-clamp-3'>
             {post.description}
           </p>
 
@@ -50,7 +50,7 @@ const DevTo: NextPage = ({ posts }) => {
         </div>
         <div className='mt-6 flex items-center'>
           <div>
-            <div className='flex space-x-1 text-sm text-gray-500'>
+            <div className='flex space-x-1 text-sm text-gray-500 dark:text-gray-400'>
               <time dateTime={post.readable_publish_date}>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -68,7 +68,7 @@ const DevTo: NextPage = ({ posts }) => {
                 </svg>
                 {post.readable_publish_date}
               </time>
-              <span aria-hidden='true' className='text-gray-900'>
+              <span aria-hidden='true' className='text-gray-900 dark:text-gray-400'>
                 &middot;
               </span>
               <span>{post.reading_time_minutes} min. read</span>

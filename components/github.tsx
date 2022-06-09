@@ -9,6 +9,14 @@ const Repos: NextPage = () => {
   }
   const featuredRepos = [
     {
+      title: 'aws-lambda-puppeteer',
+      description:
+        'Generate .PDF and upload to S3 using AWS Lambda & Puppeteer',
+      languages: ['JavaScript'],
+      updated: 'June 7 2022',
+      url: 'https://github.com/danstanhope/aws-lambda-puppeteer'
+    },
+    {
       title: 'react-compound-interest-calculator',
       description:
         'Building a Compound Interest Calculator using Chart.js + Next.js',
@@ -49,11 +57,11 @@ const Repos: NextPage = () => {
       <div className='flex-1 flex flex-col justify-between'>
         <div className='flex-1'>
           <a href={repo.url} className='block mt-2'>
-            <p className='text-xl font-semibold text-gray-900 line-clamp-2 hover:text-pink-700'>
+            <p className='text-xl font-semibold text-gray-900 dark:text-gray-100 line-clamp-2 hover:text-pink-700'>
               {repo.title}
             </p>
           </a>
-          <p className='mt-3 text-base text-gray-500 line-clamp-3'>
+          <p className='mt-3 text-base text-gray-500 dark:text-gray-400 line-clamp-3'>
             {repo.description}
           </p>
 
@@ -74,7 +82,7 @@ const Repos: NextPage = () => {
         </div>
         <div className='mt-6 flex items-center'>
           <div>
-            <div className='flex space-x-1 text-sm text-gray-500'>
+            <div className='flex space-x-1 text-sm text-gray-500 dark:text-gray-400'>
               <time dateTime={repo.updated}>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
