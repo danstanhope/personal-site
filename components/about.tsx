@@ -4,7 +4,7 @@ import Image from 'next/image'
 const About: NextPage = () => {
   return (
     <div className='space-y-4 sm:grid sm:grid-cols-3 sm:items-start sm:gap-6 sm:space-y-0'>
-      <div className='aspect-w-3 aspect-h-2 sm:aspect-w-3 sm:aspect-h-4 mr-6'>
+      <div className='aspect-w-3 aspect-h-2 sm:aspect-w-3 sm:aspect-h-4 mr-0 sm:mr-6 text-center sm:text-left'>
         <Image
           className='object-cover rounded-full'
           src='/me.jpeg'
