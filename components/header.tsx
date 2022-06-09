@@ -8,6 +8,7 @@ import { useTheme } from 'next-themes'
 const Header: NextPage = () => {
   const [enabled, setEnabled] = useState(false)
   const {theme, setTheme } = useTheme()
+  
 
   const toggle = () => {
     setEnabled(!enabled)
@@ -19,7 +20,8 @@ const Header: NextPage = () => {
   }
 
   useEffect(() => {
-    setEnabled(theme === 'light' ? true : false)    
+    setEnabled(theme === 'light' ? true : false)   
+    setTheme(!theme ? 'light' : theme); 
   }, [theme]);
 
   return (
