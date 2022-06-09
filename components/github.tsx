@@ -2,13 +2,27 @@ import { NextPage } from 'next'
 import Image from 'next/image'
 import { useEffect } from 'react'
 
+interface Repo {
+  id: number,
+  title: string,
+  description: string,
+  updated: string,
+  url: string,
+  languages: string[]
+}
+
+interface Repos {
+  repos: []
+}
+
 const Repos: NextPage = () => {
-  const tagColors = {
+  const tagColors: any = {
     JavaScript: { text: '#a08f09', background: '#f4f1d5' },
     TypeScript: { text: '#2B7489', background: '#d0ecf4' }
   }
   const featuredRepos = [
     {
+      id: 1,
       title: 'aws-lambda-puppeteer',
       description:
         'Generate .PDF and upload to S3 using AWS Lambda & Puppeteer',
@@ -17,6 +31,7 @@ const Repos: NextPage = () => {
       url: 'https://github.com/danstanhope/aws-lambda-puppeteer'
     },
     {
+      id: 2,
       title: 'react-compound-interest-calculator',
       description:
         'Building a Compound Interest Calculator using Chart.js + Next.js',
@@ -25,6 +40,7 @@ const Repos: NextPage = () => {
       url: 'https://github.com/danstanhope/react-compound-interest-calculator'
     },
     {
+      id: 3,
       title: 'supabase-twitter-authentication',
       description:
         'Tutorial on Twitter Authentication using Supabase + React + Redux + TypeScript',
@@ -33,6 +49,7 @@ const Repos: NextPage = () => {
       url: 'https://github.com/danstanhope/supabase-twitter-authentication'
     },
     {
+      id: 4,
       title: 'react-upload-pre-signed-s3-urls',
       description:
         'Tutorial project on how to generate pre-signed s3 upload urls using cloudformation, lambda and react.',
@@ -41,6 +58,7 @@ const Repos: NextPage = () => {
       url: 'https://github.com/danstanhope/react-upload-pre-signed-s3-urls'
     },
     {
+      id: 5,
       title: 'migrate-data-dynamodb-streams-lambda',
       description:
         'Use DynamoDB to modify pre-existing records so they can be written to the event stream and consumed by Lambda functions.',
@@ -48,8 +66,9 @@ const Repos: NextPage = () => {
       updated: 'Mar 19 2021',
       url: 'https://github.com/danstanhope/migrate-data-dynamodb-streams-lambda'
     },
-  ]
-  const Repo = ({ repo, idx }) => (
+  ];
+  
+  const Repo = ({repo}: {repo: Repo}) => (
     <div
       key={repo.id}
       className='sm:flex overflow-hidden mb-10 pb-10 border-b border-gray-200'
@@ -111,7 +130,7 @@ const Repos: NextPage = () => {
     <div className='list-items relative max-w-7xl mx-auto mt-8'>
       {featuredRepos.map((repo, idx) => (
         <>
-          <Repo repo={repo} idx={idx} />
+          <Repo repo={repo} />
         </>
       ))}
     </div>

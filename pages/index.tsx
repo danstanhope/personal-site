@@ -9,7 +9,11 @@ import Footer from '../components/footer'
 import Header from '../components/header'
 import { getPosts } from '../lib/request'
 
-const Home: NextPage = ({ posts }) => {
+interface Posts {
+  posts: []
+}
+
+const Home: NextPage<Posts> = ({ posts }) => {
   return (
     <ThemeProvider attribute="class">
       <div className=''>

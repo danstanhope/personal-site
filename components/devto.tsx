@@ -2,8 +2,24 @@ import { NextPage } from 'next'
 import Image from 'next/image'
 import { useEffect } from 'react'
 
-const DevTo: NextPage = ({ posts }) => {
-  const tagColors = {
+
+interface Post {
+  id: number,
+  title: string,
+  description: string,
+  cover_image: string,
+  url: string,
+  tag_list: string[],
+  readable_publish_date: string,
+  reading_time_minutes: number,
+}
+
+interface Posts {
+  posts: []
+}
+
+const DevTo: NextPage<Posts> = ({ posts }) => {
+  const tagColors : any = {
     react: '#61DAFB',
     javascript: '#F7DF1E',
     typescript: '#2B7489',
@@ -16,7 +32,7 @@ const DevTo: NextPage = ({ posts }) => {
     dynamodb: '#E10098',
     serverless: '#F7DF1E'
   }
-  const Post = ({ post, idx }) => (
+  const Post = ({post}: {post: Post}) => (
     <div
       key={post.id}
       className='sm:flex overflow-hidden mb-10 pb-10 border-b border-gray-200'
@@ -83,7 +99,7 @@ const DevTo: NextPage = ({ posts }) => {
     <div className='list-items relative max-w-7xl mx-auto mt-12'>
       {posts.map((post, idx) => (
         <>
-          <Post post={post} idx={idx} />
+          <Post post={post} />
         </>
       ))}
     </div>

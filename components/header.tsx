@@ -7,14 +7,14 @@ import { useTheme } from 'next-themes'
 
 const Header: NextPage = () => {
   const [enabled, setEnabled] = useState(false)
-  const {theme, setTheme } = useTheme('light')
+  const {theme, setTheme } = useTheme()
 
   const toggle = () => {
     setEnabled(!enabled)
     setTheme(enabled ? 'dark' : 'light')
   }
 
-  function classNames (...classes) {
+  function classNames (...classes: any) {
     return classes.filter(Boolean).join(' ')
   }
 
