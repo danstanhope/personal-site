@@ -6,7 +6,7 @@ import { Switch } from '@headlessui/react'
 import { useTheme } from 'next-themes'
 
 const Header: NextPage = () => {
-  const [enabled, setEnabled] = useState(false)
+  const [enabled, setEnabled] = useState(true)
   const {theme, setTheme } = useTheme()
   
 
@@ -18,10 +18,9 @@ const Header: NextPage = () => {
   function classNames (...classes: any) {
     return classes.filter(Boolean).join(' ')
   }
-
   useEffect(() => {
-    setEnabled(theme === 'light' ? true : false)   
-    setTheme(!theme ? 'light' : theme); 
+    setEnabled(theme === 'light' ? true : false)  
+    setTheme(theme === 'dark' ? 'dark' : 'light')
   }, [theme]);
 
   return (
